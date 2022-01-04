@@ -20,3 +20,9 @@ docker container logs namaContainer/containerId # -f untuk realtime
 docker container exec -i -t namaContainer/containerId /bin/bash # -i: argumen interaktif, -t alokasi tty
 # port forwarding 
 docker container create --name namaContainer --publish hostPort:containerPort namaImage:tag
+# menambah env variable, tambah "..." apabila ada spasi
+docker container create --name namaContainer --env key=value
+# Melihat penggunaan resource yang digunakan oleh container
+docker container stats
+# Alokasi memori dan cpu, --memory --cpus
+docker container create --name namaContainer --memory 100m --cpus 1 namaImage:tag
